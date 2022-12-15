@@ -1,0 +1,130 @@
+[
+  {
+    "id": "1",
+    "imgUrl": "https://t.ctcdn.com.br/9n2-qyu15Cnp2V3cctHcYvxsdsM=/fit-in/400x400/filters:format(webp):fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i412367.png",
+    "brand": "Acer",
+    "model": "Liquid 1",
+    "price": "16",
+    "cpu": "Ghz Mediatek Helio g96",
+    "ram": "4rem",
+    "so": "Windows",
+    "displayResolution": "1920x108",
+    "battery": "800w",
+    "dimentions": "25x25",
+    "weight": "250g",
+    "primaryCamera": ["Samsung 10Mp", "CMOS Sony 2Mp"],
+    "secondaryCmera": "",
+    "options": {
+      "color": [
+        {
+          "code": "1",
+          "name": "black"
+        }
+      ],
+      "storage": [
+        {
+          "code": "1",
+          "name": "16GB"
+        }
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "imgUrl": "https://t.ctcdn.com.br/9n2-qyu15Cnp2V3cctHcYvxsdsM=/fit-in/400x400/filters:format(webp):fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i412367.png",
+    "brand": "Acer",
+    "model": "Liquid 2",
+    "price": "16",
+    "cpu": "1.5 Ghz  Helio g96",
+    "ram": "4rem",
+    "so": "Windows",
+    "displayResolution": "",
+    "battery": "",
+    "dimentions": "",
+    "weight": "",
+    "primaryCamera": "",
+    "secondaryCmera": "",
+    "options": {
+      "color": [
+        {
+          "code": "1",
+          "name": "black"
+        }
+      ],
+      "storage": [
+        {
+          "code": "1",
+          "name": "16GB"
+        }
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "imgUrl": "https://t.ctcdn.com.br/9n2-qyu15Cnp2V3cctHcYvxsdsM=/fit-in/400x400/filters:format(webp):fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i412367.png",
+    "brand": "Acer",
+    "model": "Liquid 3",
+    "price": "16",
+    "cpu": "1.5 Ghz Mediatek Helio g96",
+    "ram": "4GB",
+    "so": "Android",
+    "displayResolution": "",
+    "battery": "",
+    "dimentions": "25X25",
+    "weight": "250g",
+    "primaryCamera": ["Samsung 10Mp", "CMOS Sony 2Mp"],
+    "secondaryCmera": "",
+    "options": {
+      "color": [
+        {
+          "code": "1",
+          "name": "black"
+        }
+      ],
+      "storage": [
+        {
+          "code": "1",
+          "name": "16GB"
+        },
+        {
+            "code": "2",
+            "name": "32GB"
+        }
+      ]
+    }
+  },
+  {
+    "id": "4",
+    "imgUrl": "https://t.ctcdn.com.br/9n2-qyu15Cnp2V3cctHcYvxsdsM=/fit-in/400x400/filters:format(webp):fill(transparent):watermark(wm/prd.png,-32p,center,1,none,15)/i412367.png",
+    "brand": "Acer",
+    "model": "Liquid 4",
+    "price": "16",
+    "cpu": "Ghz Mediatek Helio g96",
+    "ram": "4rem",
+    "so": "Windows",
+    "displayResolution": "",
+    "battery": "",
+    "dimentions": "",
+    "weight": "",
+    "primaryCamera": "",
+    "secondaryCmera": "",
+    "options": {
+      "color": [
+        {
+          "code": "1",
+          "name": "white"
+        },
+        {
+            "code": "2",
+            "name": "black"
+        }
+      ],
+      "storage": [
+        {
+          "code": "1",
+          "name": "16GB"
+        }
+      ]
+    }
+  }
+]
