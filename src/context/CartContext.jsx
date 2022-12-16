@@ -1,24 +1,19 @@
-import { useState } from "react";
-import { useContext } from "react";
-import { createContext } from "react";
+import React, { useState, useContext, createContext } from "react";
 
+import { localStorageWithExpiration } from "../utilities";
+import PropTypes from "prop-types";
 export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const data = JSON.parse(localStorage.getItem("quantity"));
   const [quantity, setQuantity] = useState(data?.quantity || 0);
+  const currentDateOnSeconds = Math.round(new Date().getTime() / 1000);
   //Lógica para que la data se elimine del local storage en una hora
   if (Math.round(new Date().getTime() / 1000) - data?.time > 3600) {
     localStorage.removeItem("quantity");
   }
   const addProductToCart = () => {
     setQuantity((prevState) => prevState + 1);
-    localStorage.setItem(
-      "quantity",
-      JSON.stringify({
-        quantity: quantity + 1,
-        time: Math.round(new Date().getTime() / 1000),
-      })
-    );
+    localStorageWithExpiration("quantity", quantity + 1, currentDateOnSeconds);
   };
   return (
     <CartContext.Provider value={{ quantity, addProductToCart }}>
@@ -32,4 +27,11 @@ export const useCartContext = () => {
     throw new Error("CartContext debe ser usado dentro de CartProvider ");
   }
   return context;
+};
+
+CartProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };

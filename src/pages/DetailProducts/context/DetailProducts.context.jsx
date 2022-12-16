@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 export const DetailProductContext = createContext();
 
@@ -18,4 +20,10 @@ export const useDetailProductContext = () => {
     throw new Error("DetailProduct debe ser usado dentro de DetailProvider ");
   }
   return context;
+};
+DetailProductProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };

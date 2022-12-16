@@ -1,6 +1,7 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import React from "react";
 import { Quantity, ShopIconWrapper } from "./style";
+import PropTypes from "prop-types";
 
 export const ShopIcon = ({ quantity }) => {
   return (
@@ -9,4 +10,7 @@ export const ShopIcon = ({ quantity }) => {
       <Quantity> {quantity} </Quantity>
     </ShopIconWrapper>
   );
+};
+ShopIcon.propTypes = {
+  quantity: PropTypes.number,
 };

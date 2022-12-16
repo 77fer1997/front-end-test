@@ -1,7 +1,7 @@
 import { Col, Row, Typography } from "antd";
 import React from "react";
 import { Card, Image, TitleCard, WrapperImage } from "./style";
-
+import PropTypes from "prop-types";
 export const ProductCard = ({
   title,
   image,
@@ -43,4 +43,12 @@ export const ProductCard = ({
       </Row>
     </Card>
   );
+};
+ProductCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  navigateTo: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };

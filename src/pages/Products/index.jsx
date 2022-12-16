@@ -1,12 +1,9 @@
 import React from "react";
-import { Breadcrumb, Col, Layout, Menu, Row, theme } from "antd";
+import { Breadcrumb, Layout, theme } from "antd";
 import { Typography } from "antd";
 import { Link } from "react-router-dom";
 import { Paths } from "../../models";
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import { Card } from "antd";
 import { Gallery, ProductCard } from "./components";
-import Sofacama from "../../assets/sofacama.jpg";
 import { HeaderGrid } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { Input } from "antd";
@@ -22,17 +19,15 @@ const { Title } = Typography;
 const Products = () => {
   const [products, setProducts] = useState();
   const [filteredProducts, setFilteredProducts] = useState();
+
   const { Search } = Input;
   const { quantity } = useCartContext();
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  /**
-   *
-   * @param {} text
-   */
+
   const onSearch = (text) => {
     const filteredProducts = products.filter(
       (product) =>
