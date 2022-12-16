@@ -1,14 +1,11 @@
 import { Button, Col, Row, Typography } from "antd";
 import { Select } from "antd";
-import * as yup from "yup";
 import { Card } from "antd";
-import { Form, Formik } from "formik";
 import React from "react";
 import { useDetailProductContext } from "../../context/DetailProducts.context";
 import { Wrapper } from "./style";
 import { useState } from "react";
 import { useCartContext } from "../../../../context/CartContext";
-import { useEffect } from "react";
 import { message } from "antd";
 const Option = Select;
 const { Text } = Typography;

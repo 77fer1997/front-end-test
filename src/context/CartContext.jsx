@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const data = JSON.parse(localStorage.getItem("quantity"));
-  const [quantity, setQuantity] = useState(data?.quantity || 0);
+  console.log(data);
+  const [quantity, setQuantity] = useState(data?.value || 0);
   const currentDateOnSeconds = Math.round(new Date().getTime() / 1000);
   //Lógica para que la data se elimine del local storage en una hora
   if (Math.round(new Date().getTime() / 1000) - data?.time > 3600) {
