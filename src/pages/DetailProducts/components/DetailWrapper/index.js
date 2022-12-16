@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const DetailWrapper = styled.div`
   display: grid;
@@ -6,4 +6,4 @@ export const DetailWrapper = styled.div`
   @media (max-width: 1290px) {
     grid-template-columns: 1fr;
   }
-`;
+`

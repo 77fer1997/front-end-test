@@ -1,1 +1,1 @@
-export * from "./localStorageWithExpiration.utilities";
+export * from './localStorageWithExpiration.utilities'

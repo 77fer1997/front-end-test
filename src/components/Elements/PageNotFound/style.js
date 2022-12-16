@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -11,4 +11,4 @@ export const Wrapper = styled.div`
   & > span:nth-child(1) {
     color: red;
   }
-`;
+`

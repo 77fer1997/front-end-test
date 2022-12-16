@@ -1,1 +1,1 @@
-export * from "./servicesConstants.constants";
+export * from './servicesConstants.constants'

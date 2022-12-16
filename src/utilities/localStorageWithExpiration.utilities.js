@@ -5,12 +5,11 @@
  * @param {*} time el timestamp actual en segundos
  */
 export const localStorageWithExpiration = (key, value, time) => {
-  console.log(value);
-  localStorage.setItem(
+  window.localStorage.setItem(
     key,
     JSON.stringify({
       value,
-      time,
+      time
     })
-  );
-};
+  )
+}

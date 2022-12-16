@@ -1,53 +1,51 @@
-import React from "react";
-import { Breadcrumb, Layout, theme } from "antd";
-import { Typography } from "antd";
-import { Link } from "react-router-dom";
-import { Paths } from "../../models";
-import { ArrowLeftOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import { DetailWrapper, LeftSide, RightSide } from "./components";
-import { HeaderGrid } from "../../components";
-import { useDetailProductContext } from "./context/DetailProducts.context";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { getProductDetail } from "../../services/products.services";
-import { useCartContext } from "../../context/CartContext";
-import { ShopIcon } from "../../components/Elements";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from 'react'
+import { Breadcrumb, Layout, theme, Typography } from 'antd'
 
-const { Header, Content, Footer } = Layout;
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import { Paths } from '../../models'
+import { ArrowLeftOutlined } from '@ant-design/icons'
+import { DetailWrapper, LeftSide, RightSide } from './components'
+import { HeaderGrid } from '../../components'
+import { useDetailProductContext } from './context/DetailProducts.context'
+
+import { getProductDetail } from '../../services/products.services'
+import { useCartContext } from '../../context/CartContext'
+import { ShopIcon } from '../../components/Elements'
+
+const { Header, Content } = Layout
 const DetailProducts = () => {
-  let { productId } = useParams();
-  const navigate = useNavigate();
-  const { quantity, addProductToCart } = useCartContext();
-  const { setDetailProduct } = useDetailProductContext();
+  const { productId } = useParams()
+  const navigate = useNavigate()
+  const { quantity } = useCartContext()
+  const { setDetailProduct } = useDetailProductContext()
   const {
-    token: { colorBgContainer },
-  } = theme.useToken();
-  const { Title } = Typography;
+    token: { colorBgContainer }
+  } = theme.useToken()
+  const { Title } = Typography
   const handleBackClick = () => {
-    navigate(Paths.PRODUCTS);
-  };
+    navigate(Paths.PRODUCTS)
+  }
   useEffect(() => {
-    getProductDetail(productId).then((product) => setDetailProduct(product));
-  }, []);
+    getProductDetail(productId).then((product) => setDetailProduct(product))
+  }, [])
 
   return (
-    <Layout className="layout">
+    <Layout className='layout'>
       <Header
         style={{
-          background: colorBgContainer,
+          background: colorBgContainer
         }}
       >
         <HeaderGrid>
           <Link to={Paths.PRODUCTS}>
-            <Title style={{ margin: 0 }} level={3} type="primary">
+            <Title style={{ margin: 0 }} level={3} type='primary'>
               My APP
             </Title>
           </Link>
 
           <Breadcrumb
             style={{
-              margin: "16px 0",
+              margin: '16px 0'
             }}
           >
             <Breadcrumb.Item>
@@ -61,16 +59,16 @@ const DetailProducts = () => {
       </Header>
       <Content
         style={{
-          padding: "25px 30px",
-          height: "100%",
-          width: "100%",
+          padding: '25px 30px',
+          height: '100%',
+          width: '100%'
         }}
       >
         <Title level={3}>
           <ArrowLeftOutlined
             onClick={handleBackClick}
-            style={{ marginRight: "1rem" }}
-          />{" "}
+            style={{ marginRight: '1rem' }}
+          />{' '}
           Details view
         </Title>
         <DetailWrapper>
@@ -79,7 +77,7 @@ const DetailProducts = () => {
         </DetailWrapper>
       </Content>
     </Layout>
-  );
-};
+  )
+}
 
-export default DetailProducts;
+export default DetailProducts

@@ -1,3 +1,3 @@
 export const Paths = {
-  PRODUCTS: "/products",
-};
+  PRODUCTS: '/products'
+}

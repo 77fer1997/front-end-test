@@ -1,66 +1,61 @@
-import React from "react";
-import { Breadcrumb, Layout, theme } from "antd";
-import { Typography } from "antd";
-import { Link } from "react-router-dom";
-import { Paths } from "../../models";
-import { Gallery, ProductCard } from "./components";
-import { HeaderGrid } from "../../components";
-import { useNavigate } from "react-router-dom";
-import { Input } from "antd";
-import { SearchWrapper } from "./components/SearchWrapper";
-import { useEffect } from "react";
-import { getProducts } from "../../services/products.services";
-import { useState } from "react";
-import { ShopIcon } from "../../components/Elements";
-import { useCartContext } from "../../context/CartContext";
-const { Header, Content } = Layout;
-const { Title } = Typography;
+import React, { useEffect, useState } from 'react'
+import { Breadcrumb, Layout, theme, Typography, Input } from 'antd'
+import { Link, useNavigate } from 'react-router-dom'
+import { Paths } from '../../models'
+import { Gallery, ProductCard } from './components'
+import { HeaderGrid } from '../../components'
+import { SearchWrapper } from './components/SearchWrapper'
+import { getProducts } from '../../services/products.services'
+import { ShopIcon } from '../../components/Elements'
+import { useCartContext } from '../../context/CartContext'
+const { Header, Content } = Layout
+const { Title } = Typography
 
 const Products = () => {
-  const [products, setProducts] = useState();
-  const [filteredProducts, setFilteredProducts] = useState();
+  const [products, setProducts] = useState()
+  const [filteredProducts, setFilteredProducts] = useState()
 
-  const { Search } = Input;
-  const { quantity } = useCartContext();
+  const { Search } = Input
+  const { quantity } = useCartContext()
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const {
-    token: { colorBgContainer },
-  } = theme.useToken();
+    token: { colorBgContainer }
+  } = theme.useToken()
 
   const onSearch = (text) => {
     const filteredProducts = products.filter(
       (product) =>
         product.model.toLowerCase().includes(text) ||
         product.brand.toLowerCase().includes(text)
-    );
-    setFilteredProducts(filteredProducts);
-  };
+    )
+    setFilteredProducts(filteredProducts)
+  }
 
   useEffect(() => {
     getProducts().then((products) => {
-      setProducts(products);
-      setFilteredProducts(products);
-    });
-  }, []);
+      setProducts(products)
+      setFilteredProducts(products)
+    })
+  }, [])
 
   return (
-    <Layout className="layout">
+    <Layout className='layout'>
       <Header
         style={{
-          background: colorBgContainer,
+          background: colorBgContainer
         }}
       >
         <HeaderGrid>
           <Link to={Paths.PRODUCTS}>
-            <Title style={{ margin: 0 }} level={3} type="primary">
+            <Title style={{ margin: 0 }} level={3} type='primary'>
               My APP
             </Title>
           </Link>
 
           <Breadcrumb
             style={{
-              margin: "16px 0",
+              margin: '16px 0'
             }}
           >
             <Breadcrumb.Item>
@@ -74,19 +69,19 @@ const Products = () => {
       </Header>
       <Content
         style={{
-          padding: "25px 50px",
-          height: "calc(100vh - 64px)",
+          padding: '25px 50px',
+          height: 'calc(100vh - 64px)'
         }}
       >
         <SearchWrapper>
           <Search
-            placeholder="input search text"
+            placeholder='input search text'
             allowClear
             onSearch={(e) => onSearch(e)}
             style={{
-              maxWidth: 400,
+              maxWidth: 400
             }}
-            size="large"
+            size='large'
           />
         </SearchWrapper>
 
@@ -105,7 +100,7 @@ const Products = () => {
         </Gallery>
       </Content>
     </Layout>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 export const Card = styled.div`
   padding: 2rem;
   background-color: white;
@@ -6,14 +6,14 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-`;
+`
 export const TitleCard = styled.h1`
   font-size: 1.5rem;
   font-weight: bold;
-`;
+`
 export const WrapperImage = styled.div`
   overflow: hidden;
-`;
+`
 export const Image = styled.img`
   object-fit: cover;
   width: 100%;
@@ -21,4 +21,4 @@ export const Image = styled.img`
   &:hover {
     transform: scale(1.25);
   }
-`;
+`

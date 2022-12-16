@@ -1,21 +1,21 @@
-import { Col, Row, Typography } from "antd";
-import React from "react";
-import { Card, Image, TitleCard, WrapperImage } from "./style";
-import PropTypes from "prop-types";
+import { Col, Row, Typography } from 'antd'
+import React from 'react'
+import { Card, Image, TitleCard, WrapperImage } from './style'
+import PropTypes from 'prop-types'
 export const ProductCard = ({
   title,
   image,
   navigateTo,
   brand,
   model,
-  price,
+  price
 }) => {
-  const { Title, Text } = Typography;
+  const { Title, Text } = Typography
   return (
     <Card>
       <TitleCard>{title}</TitleCard>
       <WrapperImage>
-        <Image src={image} alt="" onClick={navigateTo} />
+        <Image src={image} alt='' onClick={navigateTo} />
       </WrapperImage>
       <Row>
         <Col span={12}>
@@ -42,13 +42,13 @@ export const ProductCard = ({
         </Col>
       </Row>
     </Card>
-  );
-};
+  )
+}
 ProductCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  navigateTo: PropTypes.string.isRequired,
+  navigateTo: PropTypes.func.isRequired,
   brand: PropTypes.string.isRequired,
   model: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-};
+  price: PropTypes.string.isRequired
+}

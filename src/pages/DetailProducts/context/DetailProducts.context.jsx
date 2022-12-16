@@ -1,29 +1,27 @@
-import { useContext } from "react";
-import { useState } from "react";
-import { createContext } from "react";
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useContext, useState, createContext } from 'react'
 
-export const DetailProductContext = createContext();
+import PropTypes from 'prop-types'
+
+export const DetailProductContext = createContext()
 
 export const DetailProductProvider = ({ children }) => {
-  const [detailProduct, setDetailProduct] = useState(null);
+  const [detailProduct, setDetailProduct] = useState(null)
   return (
     <DetailProductContext.Provider value={{ detailProduct, setDetailProduct }}>
       {children}
     </DetailProductContext.Provider>
-  );
-};
+  )
+}
 export const useDetailProductContext = () => {
-  const context = useContext(DetailProductContext);
+  const context = useContext(DetailProductContext)
   if (context === undefined) {
-    throw new Error("DetailProduct debe ser usado dentro de DetailProvider ");
+    throw new Error('DetailProduct debe ser usado dentro de DetailProvider ')
   }
-  return context;
-};
+  return context
+}
 DetailProductProvider.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-};
+    PropTypes.node
+  ]).isRequired
+}

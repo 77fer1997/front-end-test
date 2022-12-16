@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ShopIconWrapper = styled.div`
   display: flex;
@@ -7,8 +7,8 @@ export const ShopIconWrapper = styled.div`
   position: relative;
   width: 50px;
   height: 50px;
-`;
+`
 export const Quantity = styled.span`
   left: 0;
   position: absolute;
-`;
+`

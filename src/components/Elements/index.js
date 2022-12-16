@@ -1,2 +1,2 @@
-export * from "./PageNotFound";
-export * from "./ShopIcon";
+export * from './PageNotFound'
+export * from './ShopIcon'
