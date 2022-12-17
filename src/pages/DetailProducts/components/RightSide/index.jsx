@@ -1,9 +1,7 @@
 import { Button, Col, Row, Typography, Select, Card, message } from 'antd'
-
 import React, { useState } from 'react'
 import { useDetailProductContext } from '../../context/DetailProducts.context'
 import { Wrapper } from './style'
-
 import { useCartContext } from '../../../../context/CartContext'
 
 const { Option } = Select
